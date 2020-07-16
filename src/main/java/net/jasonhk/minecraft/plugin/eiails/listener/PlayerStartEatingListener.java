@@ -35,17 +35,19 @@ public final class PlayerStartEatingListener extends PacketAdapter implements Li
     {
         val player = event.getPlayer();
 
-        val packet = event.getPacket();
-        val hand   = packet.getHands().readSafely(0);
+        ItemStack itemToBeUsed;
+        {
+            val packet    = event.getPacket();
+            val hand      = packet.getHands().readSafely(0);
+            val inventory = player.getInventory();
 
-        val inventory = player.getInventory();
-        val itemToBeUsed = (hand == Hand.MAIN_HAND) ? inventory.getItemInMainHand()
+            itemToBeUsed = (hand == Hand.MAIN_HAND) ? inventory.getItemInMainHand()
                                                     : inventory.getItemInOffHand();
+        }
 
         if (itemToBeUsed.getType().isEdible())
         {
-            val eventToBeFired = new PlayerStartEatingEvent(player);
-            Bukkit.getPluginManager().callEvent(eventToBeFired);
+            firesPlayerStartEatingEvent(player);
         }
     }
 
