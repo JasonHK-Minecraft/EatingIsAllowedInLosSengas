@@ -10,7 +10,7 @@ import net.jasonhk.minecraft.plugin.eiails.event.PlayerStartEatingEvent;
 public final class MainListener implements Listener
 {
     @EventHandler()
-    public void onPlayerStartEating(PlayerStartEatingEvent event)
+    public void onPlayerStartEating(final PlayerStartEatingEvent event)
     {
         val player = event.getPlayer();
         if (player.getFoodLevel() == 20)
