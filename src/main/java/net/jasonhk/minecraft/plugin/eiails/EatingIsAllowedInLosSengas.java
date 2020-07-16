@@ -4,11 +4,11 @@ import java.text.MessageFormat;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.comphenix.protocol.ProtocolLibrary;
+
 import kr.entree.spigradle.annotations.PluginMain;
 
 import lombok.val;
-
-import com.comphenix.protocol.ProtocolLibrary;
 
 import net.jasonhk.minecraft.plugin.eiails.listener.MainListener;
 import net.jasonhk.minecraft.plugin.eiails.listener.PlayerStartEatingListener;
@@ -20,30 +20,37 @@ public final class EatingIsAllowedInLosSengas extends JavaPlugin
     @Override
     public void onEnable()
     {
-        {
-            getServer().getPluginManager().registerEvents(new MainListener(), this);
-            getLogger().info(MessageFormat.format("Registered events listener {0}.",
-                                                  MainListener.class.getSimpleName()));
-        }
+        val logger = getLogger();
+
+        val pluginManager   = getServer().getPluginManager();
+        val protocolManager = ProtocolLibrary.getProtocolManager();
+
+        pluginManager.registerEvents(new MainListener(), this);
+        logger.info(MessageFormat.format("Registered events listener {0}.",
+                                         MainListener.class.getSimpleName()));
 
         {
-            val manager = ProtocolLibrary.getProtocolManager();
+            val listener = new PlayerStartEatingListener(this);
 
-            manager.addPacketListener(new PlayerStartEatingListener(this));
-            getLogger().info(MessageFormat.format("Added packets listener {0}.",
-                                                  PlayerStartEatingListener.class.getSimpleName()));
+            pluginManager.registerEvents(listener, this);
+            logger.info(MessageFormat.format("Registered events listener {0}.",
+                                             PlayerStartEatingListener.class.getSimpleName()));
+
+            protocolManager.addPacketListener(listener);
+            logger.info(MessageFormat.format("Added packets listener {0}.",
+                                             PlayerStartEatingListener.class.getSimpleName()));
         }
     }
 
     @Override
     public void onDisable()
     {
-        {
-            val manager = ProtocolLibrary.getProtocolManager();
-            manager.removePacketListeners(this);
+        val logger = getLogger();
 
-            getLogger().info(MessageFormat.format("Removed packets listener {0}.",
-                                                  PlayerStartEatingListener.class.getSimpleName()));
-        }
+        val protocolManager = ProtocolLibrary.getProtocolManager();
+
+        protocolManager.removePacketListeners(this);
+        logger.info(MessageFormat.format("Removed packets listener {0}.",
+                                         PlayerStartEatingListener.class.getSimpleName()));
     }
 }
