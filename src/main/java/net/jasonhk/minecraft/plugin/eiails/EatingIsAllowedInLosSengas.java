@@ -1,5 +1,7 @@
 package net.jasonhk.minecraft.plugin.eiails;
 
+import java.text.MessageFormat;
+
 import org.bukkit.plugin.java.JavaPlugin;
 
 import kr.entree.spigradle.annotations.PluginMain;
@@ -20,11 +22,17 @@ public final class EatingIsAllowedInLosSengas extends JavaPlugin
     {
         {
             getServer().getPluginManager().registerEvents(new MainListener(), this);
+
+            getLogger().info(MessageFormat.format("Registered events listener {0}.",
+                                                    MainListener.class.getSimpleName()));
         }
 
         {
             val manager = ProtocolLibrary.getProtocolManager();
             manager.addPacketListener(new PlayerStartEatingListener(this));
+
+            getLogger().info(MessageFormat.format("Added packets listener {0}.",
+                                                  PlayerStartEatingListener.class.getSimpleName()));
         }
     }
 
@@ -34,6 +42,9 @@ public final class EatingIsAllowedInLosSengas extends JavaPlugin
         {
             val manager = ProtocolLibrary.getProtocolManager();
             manager.removePacketListeners(this);
+
+            getLogger().info(MessageFormat.format("Removed packets listener {0}.",
+                                                  PlayerStartEatingListener.class.getSimpleName()));
         }
     }
 }
