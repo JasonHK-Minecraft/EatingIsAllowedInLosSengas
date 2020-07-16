@@ -17,6 +17,8 @@ public final class PlayerStartEatingListener extends PacketAdapter
 {
     public PlayerStartEatingListener(final JavaPlugin plugin)
     {
+        // TODO: `PacketType.Play.Client.USE_ITEM` and `PacketType.Play.Client.BLOCK_PLACE` in
+        //       ProtocolLib was switched places incorrectly, waiting upstream to fix this.
         super(plugin, ListenerPriority.HIGHEST, PacketType.Play.Client.BLOCK_PLACE);
     }
 
