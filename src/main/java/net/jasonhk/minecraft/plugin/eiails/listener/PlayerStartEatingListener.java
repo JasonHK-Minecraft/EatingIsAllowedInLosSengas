@@ -28,7 +28,7 @@ public final class PlayerStartEatingListener extends PacketAdapter
         val player = event.getPlayer();
 
         val packet = event.getPacket();
-        val hand   = packet.getEnumModifier(Hand.class, 0).read(0);
+        val hand   = packet.getHands().readSafely(0);
 
         val inventory = player.getInventory();
         val itemToBeUsed = (hand == Hand.MAIN_HAND) ? inventory.getItemInMainHand()
