@@ -7,7 +7,7 @@ import lombok.val;
 
 import net.jasonhk.minecraft.plugin.eiails.event.PlayerStartEatingEvent;
 
-public class MainListener implements Listener
+public final class MainListener implements Listener
 {
     @EventHandler()
     public void onPlayerStartEating(PlayerStartEatingEvent event)

@@ -13,7 +13,7 @@ import net.jasonhk.minecraft.plugin.eiails.listener.PlayerStartEatingListener;
 
 @PluginMain
 @SuppressWarnings("unused")
-public class EatingIsAllowedInLosSengas extends JavaPlugin
+public final class EatingIsAllowedInLosSengas extends JavaPlugin
 {
     @Override
     public void onEnable()
