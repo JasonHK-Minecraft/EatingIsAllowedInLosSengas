@@ -22,15 +22,14 @@ public final class EatingIsAllowedInLosSengas extends JavaPlugin
     {
         {
             getServer().getPluginManager().registerEvents(new MainListener(), this);
-
             getLogger().info(MessageFormat.format("Registered events listener {0}.",
-                                                    MainListener.class.getSimpleName()));
+                                                  MainListener.class.getSimpleName()));
         }
 
         {
             val manager = ProtocolLibrary.getProtocolManager();
-            manager.addPacketListener(new PlayerStartEatingListener(this));
 
+            manager.addPacketListener(new PlayerStartEatingListener(this));
             getLogger().info(MessageFormat.format("Added packets listener {0}.",
                                                   PlayerStartEatingListener.class.getSimpleName()));
         }
