@@ -13,8 +13,8 @@ import lombok.val;
 import net.jasonhk.minecraft.plugin.eiails.listener.MainListener;
 import net.jasonhk.minecraft.plugin.eiails.listener.PlayerStartEatingListener;
 
-@PluginMain
 @SuppressWarnings("unused")
+@PluginMain
 public final class EatingIsAllowedInLosSengas extends JavaPlugin
 {
     @Override
