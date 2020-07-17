@@ -50,7 +50,6 @@ public final class EatingIsAllowedInLosSengas extends JavaPlugin
         val protocolManager = ProtocolLibrary.getProtocolManager();
 
         protocolManager.removePacketListeners(this);
-        logger.info(MessageFormat.format("Removed packets listener {0}.",
-                                         PlayerStartEatingListener.class.getSimpleName()));
+        logger.info("Removed packets listeners.");
     }
 }
