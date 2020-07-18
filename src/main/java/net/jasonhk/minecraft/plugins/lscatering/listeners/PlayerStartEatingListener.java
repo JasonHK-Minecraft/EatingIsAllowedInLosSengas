@@ -1,4 +1,4 @@
-package net.jasonhk.minecraft.plugin.lscatering.listener;
+package net.jasonhk.minecraft.plugins.lscatering.listeners;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -19,7 +19,7 @@ import static com.comphenix.protocol.wrappers.EnumWrappers.Hand;
 
 import lombok.val;
 
-import net.jasonhk.minecraft.plugin.lscatering.event.PlayerStartEatingEvent;
+import net.jasonhk.minecraft.plugins.lscatering.events.PlayerStartEatingEvent;
 
 public final class PlayerStartEatingListener extends PacketAdapter implements Listener
 {

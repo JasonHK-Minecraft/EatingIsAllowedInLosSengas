@@ -1,4 +1,4 @@
-package net.jasonhk.minecraft.plugin.lscatering.listener;
+package net.jasonhk.minecraft.plugins.lscatering.listeners;
 
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
@@ -7,8 +7,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import lombok.val;
 
-import net.jasonhk.minecraft.plugin.lscatering.LSCatering;
-import net.jasonhk.minecraft.plugin.lscatering.event.PlayerStartEatingEvent;
+import net.jasonhk.minecraft.plugins.lscatering.LSCatering;
+import net.jasonhk.minecraft.plugins.lscatering.events.PlayerStartEatingEvent;
 
 public final class MainListener implements Listener
 {

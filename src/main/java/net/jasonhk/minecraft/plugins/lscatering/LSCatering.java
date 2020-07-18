@@ -1,4 +1,4 @@
-package net.jasonhk.minecraft.plugin.lscatering;
+package net.jasonhk.minecraft.plugins.lscatering;
 
 import java.text.MessageFormat;
 
@@ -10,8 +10,8 @@ import kr.entree.spigradle.annotations.PluginMain;
 
 import lombok.val;
 
-import net.jasonhk.minecraft.plugin.lscatering.listener.MainListener;
-import net.jasonhk.minecraft.plugin.lscatering.listener.PlayerStartEatingListener;
+import net.jasonhk.minecraft.plugins.lscatering.listeners.MainListener;
+import net.jasonhk.minecraft.plugins.lscatering.listeners.PlayerStartEatingListener;
 
 @SuppressWarnings("unused")
 @PluginMain

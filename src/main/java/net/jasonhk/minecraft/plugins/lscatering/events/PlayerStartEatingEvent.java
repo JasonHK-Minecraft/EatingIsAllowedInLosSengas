@@ -1,4 +1,4 @@
-package net.jasonhk.minecraft.plugin.lscatering.event;
+package net.jasonhk.minecraft.plugins.lscatering.events;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.HandlerList;
