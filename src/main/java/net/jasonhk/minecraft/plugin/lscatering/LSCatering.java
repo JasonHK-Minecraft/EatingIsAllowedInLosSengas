@@ -1,4 +1,4 @@
-package net.jasonhk.minecraft.plugin.eiails;
+package net.jasonhk.minecraft.plugin.lscatering;
 
 import java.text.MessageFormat;
 
@@ -10,12 +10,12 @@ import kr.entree.spigradle.annotations.PluginMain;
 
 import lombok.val;
 
-import net.jasonhk.minecraft.plugin.eiails.listener.MainListener;
-import net.jasonhk.minecraft.plugin.eiails.listener.PlayerStartEatingListener;
+import net.jasonhk.minecraft.plugin.lscatering.listener.MainListener;
+import net.jasonhk.minecraft.plugin.lscatering.listener.PlayerStartEatingListener;
 
 @SuppressWarnings("unused")
 @PluginMain
-public final class EatingIsAllowedInLosSengas extends JavaPlugin
+public final class LSCatering extends JavaPlugin
 {
     @Override
     public void onEnable()

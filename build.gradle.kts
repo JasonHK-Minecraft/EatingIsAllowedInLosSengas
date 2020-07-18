@@ -8,7 +8,7 @@ plugins {
     id("io.freefair.lombok") version "5.1.0"
 }
 
-group = "net.jasonhk.minecraft.plugin"
+group = "net.jasonhk.minecraft.plugins"
 version = "0.0.1-SNAPSHOT"
 
 repositories {
@@ -33,8 +33,8 @@ configure<JavaPluginConvention> {
 }
 
 spigot {
+    description = "Provides eating support in Los Sengas."
     authors = listOf("Jason Kwok")
-    apiVersion = "1.12.2"
     load = Load.POST_WORLD
     depends = listOf("ProtocolLib")
 

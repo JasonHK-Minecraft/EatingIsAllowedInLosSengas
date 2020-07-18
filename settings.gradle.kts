@@ -1,2 +1,1 @@
-rootProject.name = "EatingIsAllowedInLosSengas"
-
+rootProject.name = "LSCatering"
