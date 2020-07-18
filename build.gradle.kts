@@ -34,6 +34,7 @@ configure<JavaPluginConvention> {
 
 spigot {
     description = "Provides eating support in Los Sengas."
+    website = "https://github.com/JasonHK-Minecraft/LSCatering"
     authors = listOf("Jason Kwok")
     load = Load.POST_WORLD
     depends = listOf("ProtocolLib")
